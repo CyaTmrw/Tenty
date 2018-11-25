@@ -9,10 +9,10 @@ class App extends Component {
         this.state = {value: "", spam: false};
   }
   render() {
-    let SpanWarning;
-    if (this.state.spam == false) SpanWarning = (<h1></h1>);
-    else {
-        SpanWarning = (
+    let SpamWarning;
+    if (this.state.spam == false) SpamWarning = (<h1></h1>);
+    if (this.state.spam == true) {
+        SpamWarning = (
             <div className="spamWarning">
                 <img src={require('./images/warning.png')} className="spamWarningIcon" alt="Spam" />
                 <div className="spamWarningText">Spam Warning !!!</div>
@@ -30,7 +30,7 @@ class App extends Component {
                         <img src={require('./images/search.png')} className="searchIcon" alt="Search" />
                     </button>
                 </div>
-                {SpanWarning}
+                {SpamWarning}
             </div>
         </div>
     );
