@@ -22,10 +22,10 @@ class About extends Component {
                 </p>
                 <h1>How would going to accomplish it?</h1>
                 <p>
-                    We have created an app that both warn and block calls that suspect to be from scam number.
+                    We have created an app that warns the users about calls that are suspected to be from scam number.
                     Whenever person receives a call from a scammer, the client will send the number to server to check if it is scam number.
-                    If it is a scam number, the call will be blocked and he or she will be notify with a notification.
-                    If a scam call is not being block, the person can report the number.
+                    If it is a scam number, the app will warn the user with a notification.
+                    If a user did not get a warning from the app, the person can report the number.
                     When a lot of people have reported the same number, the number will be added the blacklist.
                     We also records the call and analysis the audio to see if it is a robocall.
                 </p>
