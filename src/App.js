@@ -6,11 +6,11 @@ import "./App.css";
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: "", spam: false};
+        this.state = {value: "", myspam: false};
   }
   render() {
     let SpamWarning = null;
-    if (this.state.spam == false) SpamWarning = null;
+    if (this.state.myspam == false) SpamWarning = null;
     else {
         SpamWarning = (
             <div className="spamWarning">
@@ -41,12 +41,12 @@ class App extends Component {
             axios.get("http://tentyapp.com/api/v1/exist/" + this.state.value).then((response) => {
                 console.log(response.data);
                 if (response.data.span == true) {
-                    this.setState({ spam: true }, () => {
-                        console.log(this.state.spam);
+                    this.setState({ myspam: true }, () => {
+                        console.log(this.state.myspam);
                     });
                 }
                 else {
-                    this.setState({spam: false});
+                    this.setState({myspam: false});
                 }
             });
         }
