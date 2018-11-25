@@ -12,6 +12,7 @@ class App extends Component {
     let SpamWarning;
     if (this.state.spam == false) SpamWarning = (<h1></h1>);
     if (this.state.spam == true) {
+        console.log("testing");
         SpamWarning = (
             <div className="spamWarning">
                 <img src={require('./images/warning.png')} className="spamWarningIcon" alt="Spam" />
