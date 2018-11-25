@@ -6,12 +6,12 @@ import "./App.css";
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: "", spam: false};
+        this.state = {value: "", spam: ""};
   }
   render() {
     let SpamWarning = null;
-    if (this.state.spam == false) SpamWarning = null;
-    else {
+    if (this.state.spam === false) SpamWarning = (<h1 className="spamWarning">Not a Spam Number</h1>);
+    if (this.state.spam === true) {
         SpamWarning = (
             <div className="spamWarning">
                 <img src={require('./images/warning.png')} className="spamWarningIcon" alt="Spam" />
