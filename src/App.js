@@ -35,15 +35,11 @@ class App extends Component {
   }
   search() {
         if (this.state.value.length == 10 || this.state.value.length == 11) {
-            axios.get("http://tentyapp.com/api/v1/exist/" + this.state.value).then(function (response) {
+            axios.get("http://tentyapp.com/api/v1/exist/" + this.state.value).then((response) => {
                 console.log(response.data);
                 console.log(response.error);
-                if (response.data.span == true) {
-                    this.setState({spam: true});
-                }
-                else {
-                    this.setState({spam: false});
-                }
+                if (response.data.span == true) this.setState({spam: true});
+                else this.setState({spam: false});
             });
         }
     }
