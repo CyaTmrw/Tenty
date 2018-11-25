@@ -9,8 +9,8 @@ class App extends Component {
         this.state = {value: "", spam: false};
   }
   render() {
-    let SpamWarning;
-    if (this.state.spam == false) SpamWarning = (<h1></h1>);
+    let SpamWarning; = null;
+    if (this.state.spam == false) SpamWarning = null;
     if (this.state.spam == true) {
         console.log("testing");
         SpamWarning = (
@@ -40,7 +40,6 @@ class App extends Component {
         if (this.state.value.length == 10 || this.state.value.length == 11) {
             axios.get("http://tentyapp.com/api/v1/exist/" + this.state.value).then((response) => {
                 console.log(response.data);
-                console.log(response.error);
                 if (response.data.span == true) this.setState({spam: true});
                 else this.setState({spam: false});
             });
