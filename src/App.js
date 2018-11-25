@@ -38,8 +38,12 @@ class App extends Component {
             axios.get("http://tentyapp.com/api/v1/exist/" + this.state.value).then(function (response) {
                 console.log(response.data);
                 console.log(response.error);
-                if (response.data.isSpan == true) this.setState({spam: true});
-                else this.setState({spam: false});
+                if (response.data.span == true) {
+                    this.setState({spam: true});
+                }
+                else {
+                    this.setState({spam: false});
+                }
             });
         }
     }
