@@ -11,8 +11,7 @@ class App extends Component {
   render() {
     let SpamWarning = null;
     if (this.state.spam == false) SpamWarning = null;
-    if (this.state.spam == true) {
-        console.log("testing");
+    else {
         SpamWarning = (
             <div className="spamWarning">
                 <img src={require('./images/warning.png')} className="spamWarningIcon" alt="Spam" />
@@ -20,6 +19,7 @@ class App extends Component {
             </div>
         );
     }
+
     return (
         <div className="App">
             <Header />
@@ -42,6 +42,7 @@ class App extends Component {
                 console.log(response.data);
                 if (response.data.span == true) this.setState({spam: true});
                 else this.setState({spam: false});
+                console.log(this.state.spam);
             });
         }
     }
