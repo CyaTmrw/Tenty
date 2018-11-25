@@ -10,7 +10,6 @@ class Header extends Component {
                 <h1 className="companyName">T E N T Y</h1>
                 <button className="headerHomeButton" onClick={() => this.home()}>Home</button>
                 <button className="headerAboutButton" onClick={() => this.about()}>About</button>
-                <button className="headerSecurityButton" onClick={() => this.security()}>Security</button>
             </div>
         );
     }
