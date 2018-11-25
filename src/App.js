@@ -9,7 +9,7 @@ class App extends Component {
         this.state = {value: "", spam: false};
   }
   render() {
-    let SpamWarning; = null;
+    let SpamWarning = null;
     if (this.state.spam == false) SpamWarning = null;
     if (this.state.spam == true) {
         console.log("testing");
