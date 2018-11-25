@@ -36,6 +36,8 @@ class App extends Component {
   search() {
         if (this.state.value.length == 10 || this.state.value.length == 11) {
             axios.get("http://localhost:8080/api/exist/" + this.state.value).then(function (response) {
+                console.log(response.data);
+                console.log(response.error);
                 if (response.data.isSpan == true) this.setState({spam: true});
                 else this.setState({spam: false});
             });
