@@ -40,7 +40,7 @@ class App extends Component {
         if (this.state.value.length == 10 || this.state.value.length == 11) {
             axios.get("http://tentyapp.com/api/v1/exist/" + this.state.value).then((response) => {
                 console.log(response.data);
-                if (response.data.spam == true) this.setState({spam: true};
+                if (response.data.spam == true) this.setState({spam: true});
                 else this.setState({spam: false});
             });
         }
