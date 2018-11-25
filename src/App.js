@@ -11,12 +11,14 @@ class App extends Component {
   render() {
     let SpanWarning;
     if (this.state.spam == false) SpanWarning = (<h1></h1>);
-    else SpanWarning = (
-        <div className="spamWarning">
-            <img src={require('./images/warning.png')} className="spamWarningIcon" alt="Spam" />
-            <div className="spamWarningText">Spam Warning !!!</div>
-        </div>
-    );
+    else {
+        SpanWarning = (
+            <div className="spamWarning">
+                <img src={require('./images/warning.png')} className="spamWarningIcon" alt="Spam" />
+                <div className="spamWarningText">Spam Warning !!!</div>
+            </div>
+        );
+    }
     return (
         <div className="App">
             <Header />
