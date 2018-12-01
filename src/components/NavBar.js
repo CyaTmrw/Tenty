@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { browserHistory } from 'react-router'
+import React, { Component } from "react";
+import { browserHistory } from "react-router";
 import {IconButton, Drawer, Hidden, List, ListItem, Button, Grid} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import AboutIcon from "@material-ui/icons/QuestionAnswer";
-import '../App.css';
+import "../styles/App.css";
 
-class Header extends Component {
+class NavBar extends Component {
     constructor(props) {
         super(props);
         this.state = {toggle: false};
@@ -22,7 +22,7 @@ class Header extends Component {
             );
         }
         return (
-            <div className="header">
+            <div className="navBar">
                 <Drawer anchor="right" open={this.state.toggle} onClose={() => this.toggle(false)}>
                     <div tabIndex={0} role="button" onClose={() => this.toggle(false)}
                         onKeyDown={() => this.toggle(false)}>
@@ -39,14 +39,14 @@ class Header extends Component {
                     </div>
                 </Drawer>
                 <Grid container>
-                    <Grid item xs={6}>
+                    <Grid item xs={8}>
                         {logoAndBrandName}
                     </Grid>
-                    <Grid item xs={6} className="rightHalfNavBar">
+                    <Grid item xs={4} dir="rtl">
                         <Hidden xsDown>
-                            <div className="headerButtons">
-                                <button className="headerButton" onClick={() => this.home()}>Home</button>
-                                <button className="headerButton" onClick={() => this.about()}>About</button>
+                            <div className="navBarButtonContainer">
+                                <button className="navBarButton" onClick={() => this.home()}>Home</button>
+                                <button className="navBarButton" onClick={() => this.about()}>About</button>
                             </div>
                         </Hidden>
                         <Hidden smUp>
@@ -71,4 +71,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default NavBar;

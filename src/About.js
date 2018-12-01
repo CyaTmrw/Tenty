@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import YouTube from "react-youtube";
 import Header from "./Header";
-import "./App.css";
+import "./styles/App.css";
 
 class About extends Component {
   render() {
@@ -18,7 +18,7 @@ class About extends Component {
                 <h1>What are we trying to accomplish?</h1>
                 <p>
                     We want to prevent fraud from taking place. Specifically protecting those that are vulnerable. By gathering lists of scammers we are able to produce blacklists for telecommunications companies and as well the Authorities.
-               
+
                 </p>
                 <h1>How is this accomplished?</h1>
                 <p>

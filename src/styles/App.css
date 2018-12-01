@@ -4,35 +4,8 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-.header {
-    height: 80px;
-    width: 100%;
-}
-
-.headerButtons {
-    display: inline-block;
-    direction: ltr;
-}
-
-.headerButton {
-    height: 60px;
-    font-size: 28px;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    outline: none;
-}
-
-.rightHalfNavBar {
-    direction: rtl;
-}
-.drawerItemText {
-    font-size: 30px;
-    padding: 10px;
-    margin-left: 5px;
-    margin-right: 60px;
+p {
+    font-size: 20px;
 }
 
 .logoAndBrandName {
@@ -59,6 +32,18 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 48px;
     font-weight: bold;
 }
+
+.title {
+    text-align: center;
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.subtitle {
+    font-size: 32px;
+    font-weight: bold;
+}
 .searchInput {
     height: 50px;
     width: 450px;
@@ -72,3 +57,10 @@ input[type=number]::-webkit-outer-spin-button {
     border-bottom: 1px solid black;
 }
 
+.videoPlayer {
+    display: flex;
+    justify-content: center;
+}
+@import url("../styles/NavBar.css");
+@import url("../styles/Footer.css");
+@import url("../styles/ScamResult.css");

@@ -1,0 +1,27 @@
+.scamResult {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.scamCleanText {
+    font-weight: bold;
+    font-size: 36px;
+    padding: 10px;
+}
+
+.scamWarningIcon {
+    height: 60px;
+    width: 80px;
+}
+
+.scamWarningText {
+    color: red;
+    font-weight: bold;
+    font-size: 36px;
+    padding: 10px;
+}
+
+.scamResultDescription {
+    font-size: 24px;
+    padding: 10px;
+}
