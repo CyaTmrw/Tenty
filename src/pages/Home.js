@@ -8,18 +8,26 @@ import "../styles/App.css";
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: "", scam: null};
+        this.state = {value: "", scam: null, error: null};
   }
   render() {
     let ScamResult = null;
-    if (this.state.scam === false) {
+    let ErrorMessage = null;
+    if (this.state.error != null) {
+        ErrorMessage = (
+            <Grid container direction="column" justify="center" alignItems="center" className="errorMessage">
+                <div>{this.state.error}</div>
+            </Grid>
+        );
+    } else ErrorMessage = null;
+    if (this.state.scam == false) {
         ScamResult = (
             <Grid container direction="column" justify="center" alignItems="center" className="scamResult">
                 <div className="scamCleanText">This phone number is clean!</div>
                 <div className="scamResultDescription">This phone number IS NOT a scammer's number</div>
             </Grid>
         );
-    } else if (this.state.scam === true) {
+    } else if (this.state.scam == true) {
         ScamResult = (
             <Grid container direction="column" justify="center" alignItems="center" className="scamResult">
                 <Grid container direction="row" justify="center" alignItems="center">
@@ -51,6 +59,7 @@ class Home extends Component {
                         </IconButton>
                     </Hidden>
                 </Grid>
+                {ErrorMessage}
                 {ScamResult}
             </Grid>
         </div>
@@ -59,11 +68,14 @@ class Home extends Component {
   search() {
         let number = this.state.value.replace(/[^0-9]/g, "");
         if (number.length == 10 || number.length == 11) {
+            this.setState({error: null});
             axios.get("https://tentyapp.com/api/v1/exist/" + number).then((response) => {
                 console.log(response.data);
                 if (response.data.scam == true) this.setState({scam: true});
                 else this.setState({scam: false});
             });
+        } else {
+            this.setState({scam: null, error: "Please type a vaild phone number."});
         }
     }
 }

@@ -12,9 +12,8 @@ class About extends Component {
         <div>
             <NavBar pathname={this.props.location.pathname}/>
             <div className="title">About</div>
-            <Grid container direction="row">
-                <Hidden smDown><Grid item xs={2}></Grid></Hidden>
-                <Grid item xs={8}>
+            <Grid container direction="row" justify="center" alignItems="center">
+                <Grid item xs={12} sm={10}>
                     <div className="subtitle">How do phone scams work?</div>
                     <p>
                         A CRA scam starts with a robocall claiming to be from Canadian Revenue Agency.
@@ -44,10 +43,14 @@ class About extends Component {
                         was published last month by CBC talking about CRA phone scam.
                     </p>
                     <div className="videoPlayer">
-                        <YouTube videoId="9cwcyLvoMps"/>
+                        <Hidden xsDown>
+                            <YouTube videoId="9cwcyLvoMps" opts={{height: 360, width: 600}}/>
+                        </Hidden>
+                        <Hidden smUp>
+                            <YouTube videoId="9cwcyLvoMps" opts={{height: 240, width: 400}}/>
+                        </Hidden>
                     </div>
                 </Grid>
-                <Hidden smDown><Grid item xs={2}></Grid></Hidden>
             </Grid>
             <Footer />
         </div>

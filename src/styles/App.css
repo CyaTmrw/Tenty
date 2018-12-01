@@ -44,6 +44,12 @@ p {
     font-size: 32px;
     font-weight: bold;
 }
+
+.errorMessage {
+    font-size: 28px;
+    color: red;
+}
+
 .searchInput {
     height: 50px;
     width: 450px;
